@@ -1,0 +1,12 @@
+{
+  "name": "Ember-auto-save",
+  "description": "Ember Auto Save",
+  "url": "https://github.com/lozjackson/ember-auto-save",
+  "options": {
+    "paths": [
+      "addon"
+    ],
+    "exclude": "vendor",
+    "outdir":   "docs"
+  }
+}
