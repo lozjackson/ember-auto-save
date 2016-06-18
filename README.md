@@ -25,15 +25,15 @@ Example:
 
 controller.js
 
-```
-import Ember from 'ember';
-import autoSaveProxy from 'ember-auto-save';
+  ```
+  import Ember from 'ember';
+  import autoSaveProxy from 'ember-auto-save';
 
-export default Ember.Controller.extend({
-  autoSaveProxy,
-  model: model
-});
-```
+  export default Ember.Controller.extend({
+    autoSaveProxy,
+    model: model
+  });
+  ```
 
 template.hbs
 
