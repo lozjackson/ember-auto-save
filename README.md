@@ -43,7 +43,7 @@ template.hbs
 
 ### AutoSaveComponent
 
-Use this component to wrap a model and provide an autoSaveProxy object.
+You can use the AutoSaveComponent to wrap a `model` and provide an `autoSaveProxy` object.
 
 ```
 {{#auto-save model=model as |autoSaveProxy|}}
@@ -53,9 +53,10 @@ Use this component to wrap a model and provide an autoSaveProxy object.
 
 ### AutoSaveMixin
 
-This auto-save mixin overrides the `setUnknownProperty` method, and
-triggers the `save` method when properties are set on the model.
+The AutoSaveMixin overrides the `setUnknownProperty` method, and
+triggers the `save` method when properties are set on the `model`.
 
+The example below show how you can create your own `autoSaveProxy` object.
 ```
 import AutoSaveMixin from 'ember-auto-save/mixins/auto-save';
 
@@ -66,7 +67,7 @@ let autoSaveProxy =  AutoSaveProxy.create({
 });
 ```
 
-### Save() method
+### save() method
 
 This method debounces the `save` method on the `model` provided.  This method is
 useful for saving models from within code by calling `save(model)`.
@@ -75,7 +76,7 @@ NOTE:  This method does not auto-save the `model`, you have to manually call thi
 
 
 ```
-import { save } from `ember-auto-save/utils/auto-save`
+import { save } from `ember-auto-save`
 
 save( model );
 ```
