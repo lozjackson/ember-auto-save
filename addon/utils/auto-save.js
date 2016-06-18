@@ -58,7 +58,7 @@ export default computed('model', function() {
 	## Save
 
 	This method debounces the 'save' method on the model provided.  This method is
-	usefull for saving models from within code by calling `save(model)`.
+	useful for saving models from within code by calling `save(model)`.
 
 	Using this method you don't need to wrap your models in an ObjectProxy.
 
