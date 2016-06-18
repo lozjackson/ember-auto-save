@@ -27,11 +27,11 @@ const AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
 
 	```
 	import Ember from 'ember';
-	import AutoSaveProxy from 'ember-auto-save/utils/auto-save';
+	import autoSaveProxy from 'ember-auto-save';
 
 	export default Ember.Controller.extend({
-		model: model,
-		autoSaveProxy: AutoSaveProxy
+		autoSaveProxy,
+		model: model
 	});
 	```
 
