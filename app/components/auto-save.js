@@ -1,0 +1,1 @@
+export { default } from 'ember-auto-save/components/auto-save';
