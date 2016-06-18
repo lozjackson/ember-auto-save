@@ -1,7 +1,7 @@
 {
   "name": "ember-auto-save",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember auto save",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/lozjackson/ember-auto-save",
   "engines": {
     "node": ">= 0.10.0"
   },
