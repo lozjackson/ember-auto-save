@@ -14,9 +14,9 @@ http://lozjackson.github.io/ember-auto-save/
 
 ### AutoSaveProxy
 
-This is a computed property that will that provides an `autoSaveProxy` object.  
-The `autoSaveProxy` object will proxy all requests to the `model` property.
-Setting properties on the `autoSaveProxy` object will be automatically saved.
+This is a computed property that provides an `autoSaveProxy` object.  The `autoSaveProxy`
+object will proxy all requests to the `model` property.  Setting properties on the
+`autoSaveProxy` object will be automatically saved.
 
 Use this property in a controller or component. Set your `model` on the
 controller, then create an `autoSaveProxy` object for the model.
