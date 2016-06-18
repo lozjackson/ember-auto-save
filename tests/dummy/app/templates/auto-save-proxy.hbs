@@ -1,0 +1,30 @@
+<h2>AutoSaveProxy</h2>
+
+<p>
+  This is a computed property that will auto-save the underlying <code>model</code>.
+</p>
+<p>
+  Use this property in a controller or component. Set your <code>model</code> on
+  the controller, then create an <code>autoSaveProxy</code> object for the model.
+</p>
+
+{{code-snippet name="auto-save-proxy-example.js"}}
+
+<p>
+  When you set properties on the proxy object the <code>model</code>'s <code>save()</code>
+  method will be called automatically after a short delay (default is 2 seconds).
+</p>
+{{code-snippet name="auto-save-proxy-template.hbs"}}
+
+{{! BEGIN-SNIPPET auto-save-proxy-template}}
+{{input value=autoSaveProxy.name}}
+{{! END-SNIPPET}}
+
+<p>
+  If you set the same property directly on the <code>model</code> it will not be saved automatically. 
+</p>
+{{code-snippet name="auto-save-proxy-bypass.hbs"}}
+
+{{! BEGIN-SNIPPET auto-save-proxy-bypass}}
+{{input value=model.name}}
+{{! END-SNIPPET}}

@@ -1,8 +1,9 @@
 <h2 id="title">ember-auto-save</h2>
-
-{{#auto-save model=model as |autoSaveProxy|}}
-  <div>Title: {{input value=autoSaveProxy.title}}</div>
-  <div>Body: {{textarea value=autoSaveProxy.body}}</div>
-{{/auto-save}}
+<ul>
+  <li>{{#link-to 'auto-save-proxy'}}AutoSaveProxy{{/link-to}}</li>
+  <li>{{#link-to 'auto-save-component'}}AutoSaveComponent{{/link-to}}</li>
+  <li>{{#link-to 'auto-save-mixin'}}AutoSaveMixin{{/link-to}}</li>
+  <li>{{#link-to 'save-method'}}save() method{{/link-to}}</li>
+</ul>
 
 {{outlet}}
