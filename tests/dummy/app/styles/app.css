@@ -1,6 +1,12 @@
 body {
   font-family: sans-serif;
 }
+p.version {
+  float: right;
+  font-size: 0.7rem;
+  margin: 10px;
+  padding: 0px;
+}
 p {
   line-height: 1.5;
   vertical-align: baseline;
