@@ -34,7 +34,7 @@ test('autoSaveProxy does not save if you set model property directly', function(
   };
   let model = Ember.Object.create({
     name: '',
-    save: () => assert.ok(true)
+    save: () => assert.ok(false)
   });
   let Subject = Ember.Object.extend({
     autoSaveProxy: AutoSaveProxy
