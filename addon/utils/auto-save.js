@@ -15,11 +15,12 @@ const AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
 /**
 	## AutoSaveProxy
 
-	This is a computed property that will auto-save the underlying `model`.
+	This is a computed property that provides an `autoSaveProxy` object.  The `autoSaveProxy`
+	object will proxy all requests to the `model` property.  Setting properties on the
+	`autoSaveProxy` object will be automatically saved.
 
-  Use this property in a controller or component. Set your `model` on the
-  controller, then create an `autoSaveProxy` object for the model.
-  When you update the proxy object the model will be saved automatically.
+	Use this property in a controller or component. Set your `model` on the
+	controller, then create an `autoSaveProxy` object for the model.
 
   Example:
 
@@ -38,12 +39,8 @@ const AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
 	template.hbs
 
 	```
-	{{component model=autoSaveProxy}}
+	{{input value=autoSaveProxy.name}}
   ```
-
-
-  The `autoSaveProxy` object will proxy all requests to the `model` property
-  Setting properties on the `autoSaveProxy` object will be automatically saved.
 
   @property autoSaveProxy
   @type {Object} Ember.ObjectProxy
@@ -66,7 +63,7 @@ export default computed('model', function() {
 
 
   ```
-	import { save } from `ember-auto-save/utils/auto-save`
+	import { save } from `ember-auto-save`
 
 	save( model );
   ```
