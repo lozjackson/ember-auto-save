@@ -1,1 +1,1 @@
-export { default, save } from 'ember-auto-save/utils/auto-save';
+export { default } from 'ember-auto-save/utils/auto-save';
