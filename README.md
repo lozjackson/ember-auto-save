@@ -1,6 +1,6 @@
 # Ember-auto-save
 
-An Ember-cli addon that provides auto-save functionality for ember-data models.
+An Ember-cli addon that provides auto-save functionality for Ember applications.
 
 ## Demo
 
