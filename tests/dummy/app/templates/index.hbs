@@ -1,0 +1,45 @@
+<h2>Install</h2>
+
+<div class="panel code">
+  <pre><code>ember install ember-auto-save</code></pre>
+</div>
+
+<h2>Description</h2>
+
+<p>An Ember-cli addon that provides auto-save functionality for Ember applications.</p>
+
+<div>
+  <h3>{{#link-to 'auto-save-proxy'}}AutoSaveProxy{{/link-to}}</h3>
+
+  <p>
+    This is a computed property that provides an <code>autoSaveProxy</code> object.
+    The <code>autoSaveProxy</code> object will proxy all <code>get()</code> and
+    <code>set()</code> requests to the <code>model</code> property.  Setting
+    properties on the <code>autoSaveProxy</code> object will be automatically saved.
+  </p>
+</div>
+
+<div>
+  <h3>{{#link-to 'auto-save-component'}}AutoSaveComponent{{/link-to}}</h3>
+
+  <p>
+    You can use the <code>AutoSaveComponent</code> to wrap a <code>model</code> and provide an <code>autoSaveProxy</code> object.
+  </p>
+</div>
+
+<div>
+  <h3>{{#link-to 'auto-save-mixin'}}AutoSaveMixin{{/link-to}}</h3>
+  <p>
+    The AutoSaveMixin overrides the <code>setUnknownProperty</code> method, and
+    triggers the <code>save</code> method when properties are set on the <code>model</code>.
+  </p>
+</div>
+
+<div>
+  <h3>{{#link-to 'save-method'}}<code>save()</code> method{{/link-to}}</h3>
+  <p>
+    Use the <code>save()</code> method to save the <code>model</code> using the
+    Ember.js <a href="http://emberjs.com/api/classes/Ember.run.html#method_debounce">debounce()</a>
+    method.
+  </p>
+</div>
