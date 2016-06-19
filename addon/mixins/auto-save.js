@@ -2,15 +2,26 @@
     @module ember-auto-save
 */
 import Ember from 'ember';
+import save from 'ember-auto-save/utils/save';
 
 /**
-    This auto-save mixin overrides the `setUnknownProperty` method, and
-    triggers the `save` method when properties are set on the model.
+  This auto-save mixin overrides the `setUnknownProperty` method, and
+  triggers the `save()` method when properties are set on the model.
 
-    Use this mixin with an ObjectProxy - Wrap the model in the ObjectProxy.
+  The example below show how to create an `autoSaveProxy` object.
 
-    @class AutoSaveMixin
-    @namespace Mixins
+  ```
+  import AutoSaveMixin from 'ember-auto-save/mixins/auto-save';
+
+  let AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
+
+  let autoSaveProxy =  AutoSaveProxy.create({
+    content: this.get('model')
+  });
+  ```
+
+  @class AutoSaveMixin
+  @namespace Mixins
 */
 export default Ember.Mixin.create({
 
@@ -45,7 +56,7 @@ export default Ember.Mixin.create({
     @private
   */
   save() {
-    let { content:model, wait } = this.getProperties('content', 'wait');
-    Ember.run.debounce(model, model.save, wait);
+    let { content, wait } = this.getProperties('content', 'wait');
+    save(content, wait);
   }
 });
