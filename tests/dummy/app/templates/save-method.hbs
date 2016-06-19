@@ -1,1 +1,16 @@
 <h2><code>save()</code> method</h2>
+
+<p>
+  Use the <code>save()</code> method to save the <code>model</code> using the
+  Ember.js <a href="http://emberjs.com/api/classes/Ember.run.html#method_debounce" target="_blank"><code>debounce()</code></a>
+  method.
+</p>
+
+{{code-snippet name="save-method-example.js"}}
+
+<p>
+Optionally, you can provide a time to wait before applying the method.  If no
+time value is specified then the default of 2000 (2 seconds) will be used.
+</p>
+
+{{code-snippet name="save-method-wait-example.js"}}

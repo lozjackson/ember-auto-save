@@ -1,6 +1,15 @@
 <h2>AutoSaveComponent</h2>
 
-{{#auto-save model=model as |autoSaveProxy|}}
-  <div>Title: {{input value=autoSaveProxy.title}}</div>
-  <div>Body: {{textarea value=autoSaveProxy.body}}</div>
-{{/auto-save}}
+<p>
+  Use this component to provide an <code>autoSaveProxy</code> object in your template.
+</p>
+
+{{code-snippet name="auto-save-component-example.hbs"}}
+<div class="panel">
+  {{! BEGIN-SNIPPET auto-save-component-example }}
+  {{#auto-save model=model as |autoSaveProxy|}}
+    <div>Title: {{input value=autoSaveProxy.title}}</div>
+    <div>Body: {{textarea value=autoSaveProxy.body}}</div>
+  {{/auto-save}}
+  {{! END-SNIPPET }}
+</div>

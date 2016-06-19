@@ -69,11 +69,9 @@ let autoSaveProxy =  AutoSaveProxy.create({
 
 ### save() method
 
-This method debounces the `save` method on the `model` provided.  This method is
-useful for saving models from within code by calling `save(model)`.
-
-NOTE:  This method does not auto-save the `model`, you have to manually call this method.
-
+Use the `save()` method to save the `model` using the
+Ember.js [debounce()](http://emberjs.com/api/classes/Ember.run.html#method_debounce)
+method.
 
 ```
 import { save } from `ember-auto-save`

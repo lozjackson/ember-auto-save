@@ -4,10 +4,33 @@
 import Ember from 'ember';
 import AutoSaveMixin from 'ember-auto-save/mixins/auto-save';
 
-const { computed, assert } = Ember;
+const { computed } = Ember;
 const AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
 
 /**
+	The `AutoSave` utility class provides the `autoSaveProxy` computed property.
+	This property can be used in controllers or components and will proxy `get`/`set`
+	requests to the `model`.  Setting properties on the `AutoSaveProxy` object will
+	trigger an automatic save to be scheduled after a short delay.
+
+	controller/component
+
+	```
+	import Ember from 'ember';
+	import autoSaveProxy from 'ember-auto-save';
+
+	export default Ember.Controller.extend({
+		autoSaveProxy,
+		model: model
+	});
+	```
+
+	template
+
+	```
+	{{input value=autoSaveProxy.name}}
+  ```
+
 	@class AutoSave
 	@namespace Utils
 */
@@ -50,39 +73,3 @@ export default computed('model', function() {
 		content: this.get('model')
 	});
 });
-
-/**
-	## Save
-
-	This method debounces the 'save' method on the model provided.  This method is
-	useful for saving models from within code by calling `save(model)`.
-
-	Using this method you don't need to wrap your models in an ObjectProxy.
-
-	NOTE:  This method does not auto-save, you have to manually call this method.
-
-
-  ```
-	import { save } from `ember-auto-save`
-
-	save( model );
-  ```
-
-	Optionally, you can provide a time to wait before applying the method.  If no
-	time value is specified then the default of 2000 (2 seconds) will be used.
-
-  ```
-	// save the model after 5 seconds
-	save( model, 5000 );
-  ```
-
-  @method save
-	@param {Object} model The model to save
-	@param {Integer} time The time to wait before saving.
-*/
-export function save(model, time) {
-  if ( isNaN(time) || time < 0 ) { time = 2000; }
-	assert(`'model' should be an object`, typeof model === 'object');
-	assert(`'model.save' should be a function`, typeof model.save === 'function');
-	Ember.run.debounce(model, model.save, time);
-}
