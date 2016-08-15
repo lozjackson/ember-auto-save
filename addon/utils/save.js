@@ -3,7 +3,7 @@
 */
 import Ember from 'ember';
 
-const { assert } = Ember;
+const { assert, get } = Ember;
 
 /**
   The `Save` Utility class provides a method for saving the model using the [Ember.js debounce method](http://emberjs.com/api/classes/Ember.run.html#method_debounce).
@@ -58,6 +58,13 @@ const { assert } = Ember;
 export default function(model, time) {
   if ( isNaN(time) || time < 0 ) { time = 2000; }
 	assert(`'model' should be an object`, typeof model === 'object');
-	assert(`'model.save' should be a function`, typeof model.save === 'function');
-	Ember.run.debounce(model, model.save, time);
+
+  // check if there is a save method
+  // if there is no save method, then try the model.content property.
+  if (!model.save && get(model, 'content.save')) {
+    model = get(model, 'content');
+  }
+  assert(`'model.save' should be a function`, typeof model.save === 'function');
+
+  Ember.run.debounce(model, model.save, time);
 }
