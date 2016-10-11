@@ -1,5 +1,7 @@
 # Change Log
 
+* [#1](https://github.com/lozjackson/ember-auto-save/pull/1) Add `immediate` option to the `save()` method.
+
 ### v0.0.4 2016-08-15
 
 * [BUGFIX] If the `model` has no `save` method, try `model.content`.
