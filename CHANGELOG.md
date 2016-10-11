@@ -1,4 +1,4 @@
-# Change Log
+# CHANGELOG
 
 ### v0.0.5 2016-10-11
 
