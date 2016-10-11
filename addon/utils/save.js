@@ -54,8 +54,10 @@ const { assert, get } = Ember;
   @method save
 	@param {Object} model The model to save
 	@param {Integer} time The time to wait before saving.
+  @param {Boolean} immediate Trigger the function on the leading instead
+    of the trailing edge of the wait interval. Defaults to false.
 */
-export default function(model, time) {
+export default function(model, time, immediate) {
   if ( isNaN(time) || time < 0 ) { time = 2000; }
 	assert(`'model' should be an object`, typeof model === 'object');
 
@@ -66,5 +68,5 @@ export default function(model, time) {
   }
   assert(`'model.save' should be a function`, typeof model.save === 'function');
 
-  Ember.run.debounce(model, model.save, time);
+  Ember.run.debounce(model, model.save, time, immediate);
 }
