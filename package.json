@@ -1,6 +1,6 @@
 {
   "name": "ember-auto-save",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "An Ember-cli addon that provides auto-save functionality for Ember applications.",
   "keywords": [
     "ember-addon"

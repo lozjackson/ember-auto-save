@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### v1.0.0 2018-04-15
+
+* [#2](https://github.com/lozjackson/ember-auto-save/pull/2) Update ember-cli 2.18.2
+
+
+
+
 ### v0.0.5 2016-10-11
 
 * [#1](https://github.com/lozjackson/ember-auto-save/pull/1) Add `immediate` option to the `save()` method.
