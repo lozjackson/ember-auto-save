@@ -1,7 +1,7 @@
 /**
     @module ember-auto-save
 */
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 import save from 'ember-auto-save/utils/save';
 
 /**
@@ -23,7 +23,7 @@ import save from 'ember-auto-save/utils/save';
   @class AutoSaveMixin
   @namespace Mixins
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
   /**
     The number of milliseconds to wait for debouncing

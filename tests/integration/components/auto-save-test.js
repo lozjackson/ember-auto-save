@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -24,7 +24,7 @@ test('it renders', function(assert) {
 test('autoSaveProxy', function(assert) {
   assert.expect(2);
 
-  let model = Ember.Object.create({ name: 'Dave' });
+  let model = EmberObject.create({ name: 'Dave' });
 
   this.set('model', model);
 

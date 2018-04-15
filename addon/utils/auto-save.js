@@ -1,11 +1,12 @@
 /**
 	@module ember-auto-save
 */
-import Ember from 'ember';
+import ObjectProxy from '@ember/object/proxy';
 import AutoSaveMixin from 'ember-auto-save/mixins/auto-save';
+import { computed } from '@ember/object';
 
-const { computed } = Ember;
-const AutoSaveProxy = Ember.ObjectProxy.extend(AutoSaveMixin);
+
+const AutoSaveProxy = ObjectProxy.extend(AutoSaveMixin);
 
 /**
 	The `AutoSave` utility class provides the `autoSaveProxy` computed property.

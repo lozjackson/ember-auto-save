@@ -1,7 +1,7 @@
 /**
   @module ember-auto-save
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/auto-save';
 import AutoSaveProxy from 'ember-auto-save/utils/auto-save';
 
@@ -17,7 +17,7 @@ import AutoSaveProxy from 'ember-auto-save/utils/auto-save';
   @class AutoSaveComponent
   @namespace Components
 */
-export default Ember.Component.extend({
+export default Component.extend({
 
   layout,
 
