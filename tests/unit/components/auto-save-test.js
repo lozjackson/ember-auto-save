@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
+import { run } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('auto-save', 'Unit | Component | auto save', {
@@ -19,15 +20,15 @@ test('it renders', function(assert) {
 
 test('autoSaveProxy', function(assert) {
   assert.expect(4);
-  let _debounce = Ember.run.debounce;
-  Ember.run.debounce = (ctx, fn, time) => {
+  let debounce = run.debounce;
+  run.debounce = (ctx, fn, time) => {
     assert.equal(typeof ctx, 'object');
     assert.equal(typeof fn, 'function');
     assert.equal(typeof time, 'number');
     fn.call(ctx);
   };
 
-  let model = Ember.Object.create({
+  let model = EmberObject.create({
     name: '',
     save: () => assert.ok(true)
   });
@@ -37,18 +38,18 @@ test('autoSaveProxy', function(assert) {
   component.set('model', model);
   component.set('autoSaveProxy.name', 'Dave');
 
-  Ember.run.debounce = _debounce;
+  run.debounce = debounce;
 });
 
 test('autoSaveProxy does not save if you set model property directly', function(assert) {
   assert.expect(1);
-  let _debounce = Ember.run.debounce;
-  Ember.run.debounce = (ctx, fn) => {
+  let debounce = run.debounce;
+  run.debounce = (ctx, fn) => {
     assert.ok(false);
     fn.call(ctx);
   };
 
-  let model = Ember.Object.create({
+  let model = EmberObject.create({
     name: '',
     save: () => assert.ok(false)
   });
@@ -60,5 +61,5 @@ test('autoSaveProxy does not save if you set model property directly', function(
   component.set('model.name', 'Dave');
   assert.equal(component.get('autoSaveProxy.name'), 'Dave');
 
-  Ember.run.debounce = _debounce;
+  run.debounce = debounce;
 });

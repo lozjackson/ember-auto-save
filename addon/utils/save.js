@@ -1,9 +1,9 @@
 /**
 	@module ember-auto-save
 */
-import Ember from 'ember';
-
-const { assert, get } = Ember;
+import { debounce } from '@ember/runloop';
+import { assert } from '@ember/debug';
+import { get } from '@ember/object';
 
 /**
   The `Save` Utility class provides a method for saving the model using the [Ember.js debounce method](http://emberjs.com/api/classes/Ember.run.html#method_debounce).
@@ -68,5 +68,5 @@ export default function(model, time, immediate) {
   }
   assert(`'model.save' should be a function`, typeof model.save === 'function');
 
-  Ember.run.debounce(model, model.save, time, immediate);
+  debounce(model, model.save, time, immediate);
 }
