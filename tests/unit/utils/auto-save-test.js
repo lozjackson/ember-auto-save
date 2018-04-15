@@ -1,14 +1,14 @@
 import EmberObject from '@ember/object';
-import { run } from '@ember/runloop';
 import AutoSaveProxy from 'dummy/utils/auto-save';
 import { module, test } from 'qunit';
+import { run } from '@ember/runloop';
 
 module('Unit | Utility | auto save');
 
 test('autoSaveProxy', function(assert) {
   assert.expect(4);
-  let _debounce = debounce;
-  debounce = (ctx, fn, time) => {
+  let debounce = run.debounce;
+  run.debounce = (ctx, fn, time) => {
     assert.equal(typeof ctx, 'object');
     assert.equal(typeof fn, 'function');
     assert.equal(typeof time, 'number');
@@ -23,7 +23,7 @@ test('autoSaveProxy', function(assert) {
   });
   let subject = Subject.create({model});
   subject.set('autoSaveProxy.name', 'Dave');
-  debounce = _debounce;
+  run.debounce = debounce;
 });
 
 test('autoSaveProxy does not save if you set model property directly', function(assert) {
