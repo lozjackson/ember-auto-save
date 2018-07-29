@@ -70,7 +70,9 @@ const AutoSaveProxy = ObjectProxy.extend(AutoSaveMixin);
   @type {Object} Ember.ObjectProxy
 */
 export default computed('model', function() {
+	const wait = this.get('wait') || 2000;
 	return AutoSaveProxy.create({
-		content: this.get('model')
+          content: this.get('model'),
+          wait
 	});
 });

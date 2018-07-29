@@ -51,6 +51,14 @@ You can use the AutoSaveComponent to wrap a `model` and provide an `autoSaveProx
 {{/auto-save}}
 ```
 
+You can also set the wait time to save the changes.
+
+```
+{{#auto-save wait=500 model=model as |autoSaveProxy|}}
+  {{input value=autoSaveProxy.name}}
+{{/auto-save}}
+```
+
 ### AutoSaveMixin
 
 The AutoSaveMixin overrides the `setUnknownProperty` method, and
